@@ -3,30 +3,41 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert(
-      "tags", 
+      "postTags",
       [
         {
-          tag: "pooping",
+          postId: 1,
+          tagId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          tag: "big shit",
+          postId: 2,
+          tagId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          tag: "hard shit",
+          postId: 1,
+          tagId: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          tag: "soft shit",
+          postId: 2,
+          tagId: 4,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          tag: "diarrhea",
+          postId: 1,
+          tagId: 5,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          postId: 3,
+          tagId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -35,6 +46,11 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete("tags", null, {})
+    /**
+     * Add commands to revert seed here.
+     *
+     * Example:
+     * await queryInterface.bulkDelete('People', null, {});
+     */
   }
 };
