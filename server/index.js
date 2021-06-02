@@ -1,6 +1,8 @@
 const express = require("express");
 const corsMiddleWare = require("cors");
 const bodyParser = require('body-parser')
+const authRouter = require('./routers/auth')
+const userRouter = require("./routers/users");
 
 const app = express();
 const PORT = 4000;
@@ -15,6 +17,9 @@ if (process.env.DELAY) {
     });
   }
 
+//Routes
+app.use("/", authRouter);
+app.use("/user", userRouter);
 
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`);
